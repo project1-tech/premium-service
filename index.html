@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PREMIUM SERVICES - Buy Instagram Services & Premium Apps</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <i class="fa-solid fa-crown"></i> PREMIUM <span>SERVICES</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <a data-page="home" class="active"><i class="fa-solid fa-house"></i> Home</a>
+                <a data-page="instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                <a data-page="apps"><i class="fa-solid fa-mobile-screen"></i> Premium Apps</a>
+                <a data-page="contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main>
+
+        <!-- HOME PAGE -->
+        <section class="page active" id="page-home">
+            <div class="hero">
+                <h1>Welcome to <span>PREMIUM SERVICES</span></h1>
+                <p>Your one-stop shop for <strong>Instagram growth</strong> and <strong>Premium App subscriptions</strong>. Fast, reliable, and affordable.</p>
+                <div class="badge-row">
+                    <span class="badge"><i class="fa-solid fa-bolt"></i> Fast Delivery</span>
+                    <span class="badge"><i class="fa-solid fa-shield-halved"></i> Secure</span>
+                    <span class="badge"><i class="fa-solid fa-headset"></i> 24/7 Support</span>
+                </div>
+            </div>
+            <h2 class="section-title"><i class="fa-solid fa-star"></i> Our Services</h2>
+            <p class="section-subtitle">Click a category below or use the navigation to explore all services.</p>
+            <div class="cards-grid">
+                <div class="service-card" style="cursor:pointer;" onclick="navigateTo('instagram')">
+                    <div class="card-icon ig"><i class="fa-brands fa-instagram"></i></div>
+                    <h3>Instagram Services</h3>
+                    <p style="color:var(--text-light);font-size:0.9rem;">Followers • Likes • Views</p>
+                    <span style="color:var(--accent);font-weight:600;">From KSh 300 →</span>
+                </div>
+                <div class="service-card" style="cursor:pointer;" onclick="navigateTo('apps')">
+                    <div class="card-icon app"><i class="fa-solid fa-play"></i></div>
+                    <h3>Premium Apps</h3>
+                    <p style="color:var(--text-light);font-size:0.9rem;">Netflix • YouTube • DStv</p>
+                    <span style="color:var(--accent);font-weight:600;">From KSh 300/month →</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTAGRAM SERVICES PAGE -->
+        <section class="page" id="page-instagram">
+            <h2 class="section-title"><i class="fa-brands fa-instagram"></i> Instagram Services</h2>
+            <p class="section-subtitle">Select a package, choose your quantity, and click <strong>Order Now</strong>.</p>
+
+            <h3 style="margin-bottom:12px;color:var(--primary);">📈 Followers</h3>
+            <div class="cards-grid">
+                <!-- Followers Card -->
+                <div class="service-card" id="card-followers">
+                    <div class="card-icon ig"><i class="fa-solid fa-user-plus"></i></div>
+                    <h3>Instagram Followers</h3>
+                    <select id="followersSelect" onchange="updatePrice(this, 'followersPrice')">
+                        <option value="500 Followers" data-price="500">500 Followers</option>
+                        <option value="1000 Followers" data-price="900">1,000 Followers</option>
+                        <option value="5000 Followers" data-price="3500">5,000 Followers</option>
+                        <option value="10000 Followers" data-price="6000">10,000 Followers</option>
+                    </select>
+                    <div class="price-display" id="followersPrice">KSh 500 <small>KES</small></div>
+                    <button class="btn-order" onclick="placeOrder('Instagram Followers', 'followersSelect')">
+                        <i class="fa-solid fa-cart-shopping"></i> Order Now
+                    </button>
+                </div>
+
+                <!-- Likes Card -->
+                <div class="service-card" id="card-likes">
+                    <div class="card-icon ig"><i class="fa-solid fa-heart"></i></div>
+                    <h3>Instagram Likes</h3>
+                    <select id="likesSelect" onchange="updatePrice(this, 'likesPrice')">
+                        <option value="500 Likes" data-price="400">500 Likes</option>
+                        <option value="1000 Likes" data-price="700">1,000 Likes</option>
+                        <option value="5000 Likes" data-price="2500">5,000 Likes</option>
+                    </select>
+                    <div class="price-display" id="likesPrice">KSh 400 <small>KES</small></div>
+                    <button class="btn-order" onclick="placeOrder('Instagram Likes', 'likesSelect')">
+                        <i class="fa-solid fa-cart-shopping"></i> Order Now
+                    </button>
+                </div>
+
+                <!-- Views Card -->
+                <div class="service-card" id="card-views">
+                    <div class="card-icon ig"><i class="fa-solid fa-eye"></i></div>
+                    <h3>Instagram Views</h3>
+                    <select id="viewsSelect" onchange="updatePrice(this, 'viewsPrice')">
+                        <option value="1000 Views" data-price="300">1,000 Views</option>
+                        <option value="5000 Views" data-price="1200">5,000 Views</option>
+                        <option value="10000 Views" data-price="2000">10,000 Views</option>
+                        <option value="50000 Views" data-price="7000">50,000 Views</option>
+                    </select>
+                    <div class="price-display" id="viewsPrice">KSh 300 <small>KES</small></div>
+                    <button class="btn-order" onclick="placeOrder('Instagram Views', 'viewsSelect')">
+                        <i class="fa-solid fa-cart-shopping"></i> Order Now
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PREMIUM APPS PAGE -->
+        <section class="page" id="page-apps">
+            <h2 class="section-title"><i class="fa-solid fa-mobile-screen"></i> Premium Apps</h2>
+            <p class="section-subtitle">Affordable subscriptions for your favorite premium apps.</p>
+
+            <div class="cards-grid">
+                <!-- Netflix Card -->
+                <div class="service-card" id="card-netflix">
+                    <div class="card-icon app"><i class="fa-solid fa-tv"></i></div>
+                    <h3>Netflix</h3>
+                    <select id="netflixSelect" onchange="updatePrice(this, 'netflixPrice')">
+                        <option value="Netflix Basic" data-price="300">Basic Plan</option>
+                        <option value="Netflix Standard" data-price="700">Standard Plan</option>
+                        <option value="Netflix Premium" data-price="1100">Premium Plan</option>
+                    </select>
+                    <div class="price-display" id="netflixPrice">KSh 300 <small>/month</small></div>
+                    <button class="btn-order" onclick="placeOrder('Netflix Subscription', 'netflixSelect')">
+                        <i class="fa-solid fa-cart-shopping"></i> Order Now
+                    </button>
+                </div>
+
+                <!-- YouTube Premium Card -->
+                <div class="service-card" id="card-youtube">
+                    <div class="card-icon app" style="background:#ff0000;"><i class="fa-brands fa-youtube"></i></div>
+                    <h3>YouTube Premium</h3>
+                    <select id="youtubeSelect" onchange="updatePrice(this, 'youtubePrice')">
+                        <option value="YouTube Premium Individual" data-price="500">Individual</option>
+                        <option value="YouTube Premium Family" data-price="900">Family (up to 5)</option>
+                    </select>
+                    <div class="price-display" id="youtubePrice">KSh 500 <small>/month</small></div>
+                    <button class="btn-order" onclick="placeOrder('YouTube Premium', 'youtubeSelect')">
+                        <i class="fa-solid fa-cart-shopping"></i> Order Now
+                    </button>
+                </div>
+
+                <!-- DStv Card -->
+                <div class="service-card" id="card-dstv">
+                    <div class="card-icon app" style="background:#005a9c;"><i class="fa-solid fa-satellite-dish"></i></div>
+                    <h3>DStv</h3>
+                    <select id="dstvSelect" onchange="updatePrice(this, 'dstvPrice')">
+                        <option value="DStv Access" data-price="650">Access</option>
+                        <option value="DStv Compact" data-price="1500">Compact</option>
+                        <option value="DStv Premium" data-price="5000">Premium</option>
+                    </select>
+                    <div class="price-display" id="dstvPrice">KSh 650 <small>/month</small></div>
+                    <button class="btn-order" onclick="placeOrder('DStv Subscription', 'dstvSelect')">
+                        <i class="fa-solid fa-cart-shopping"></i> Order Now
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT PAGE -->
+        <section class="page" id="page-contact">
+            <div class="contact-card">
+                <h2><i class="fa-solid fa-headset"></i> Get In Touch</h2>
+                <p>Have questions or need a custom package? Reach out to us on WhatsApp — we're happy to help!</p>
+                <a href="https://wa.me/25411490456?text=Hello%20PREMIUM%20SERVICES%2C%20I%20need%20assistance." target="_blank" class="whatsapp-link">
+                    <i class="fa-brands fa-whatsapp fa-lg"></i> Chat on WhatsApp
+                </a>
+                <p style="margin-top:16px;font-size:0.85rem;color:var(--text-light);">
+                    <i class="fa-solid fa-phone"></i> <strong>+254 114 90456</strong>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== ORDER MODAL ==================== -->
+    <div class="modal-overlay" id="orderModalOverlay">
+        <div class="modal">
+            <div class="spinner" id="modalSpinner"></div>
+            <p style="font-weight:600;color:var(--primary);" id="modalTitle">Processing Your Order please wait...</p>
+            <p class="order-summary" id="modalSummary"></p>
+            <div class="countdown" id="modalCountdown">7</div>
+            <p style="font-size:0.85rem;color:#888;">seconds until redirect</p>
+            <p class="redirect-msg" id="modalRedirectMsg" style="display:none;">
+                <i class="fa-brands fa-whatsapp" style="color:#25d366;"></i> Redirecting to WhatsApp...
+            </p>
+            <button class="cancel-btn" id="cancelOrderBtn" onclick="cancelOrder()">Cancel</button>
+        </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <p>&copy; <span id="currentYear"></span> <strong>© 2026 Symoh Techn Ideas</strong>. All Rights Reserved.</p>
+        <p style="font-size:0.78rem;margin-top:4px;">PREMIUM SERVICES — Quality & Trust</p>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js" defer></script>
+</body>
+</html>
